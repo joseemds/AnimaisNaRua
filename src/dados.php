@@ -33,7 +33,17 @@
 
 <div class="container">
   <div class="row card">
-<table class="centered">
+
+  <?php
+include("db_connect.php");
+
+echo "<p>".$_POST['descricao']."</p>";
+
+echo  "<p>".$result."</p>";
+
+?>
+
+<!-- <table class="centered">
         <thead>
           <tr>
               <th>Semana</th>
@@ -59,7 +69,7 @@
             <td>$7.00</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
 </div>
 </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

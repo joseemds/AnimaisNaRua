@@ -39,7 +39,7 @@
   <div class="container">
     <div class="row card">
       <div class="row">
-        <form class="col s12 m7" method="post" action="resposta.php" enctype="multipart/form-data">
+        <form class="col s12 m7" method="post" action="dados.php" enctype="multipart/form-data">
           <div class="input-field col s6">
             <i class="material-icons prefix">place</i>
             <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
@@ -48,7 +48,7 @@
 
           <div class="input-field col s12">
             <i class="material-icons prefix">edit</i>
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea id="textarea1" name="descricao" class="materialize-textarea"></textarea>
             <label for="textarea1">Descrição do Animal </label>
           </div>
           <div class="input-field col s12">
@@ -83,6 +83,11 @@
             <input type="text" class="datepicker" placeholder="Data" />
             <label for="icon_telephone">Em qual data o animal foi encontrado?</label>
           </div>
+        <div class="input-field col s12">
+        <button class="btn waves-effect waves-light cyan darken-2" type="submit" name="action">Enviar
+    <i class="material-icons right">send</i>
+  </button>
+        </div>
         </form>
       </div>
     </div>
@@ -108,6 +113,14 @@
       var instances = M.Datepicker.init(elems);
     });
   </script>
+
+<?php
+		include("bd_conect.php");
+		$nome = $_POST['nome'];
+		$mensagem = $_POST['mensagem'];
+		$sql = $pdo->query("INSERT INTO db_animais SET ani_nome= '$nome'");
+
+	?>
 </body>
 
 </html>
