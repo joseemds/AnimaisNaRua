@@ -37,41 +37,71 @@
   <?php
 include("db_connect.php");
 
-echo "<p>".$_POST['descricao']."</p>";
+    echo "<p>".$_POST['descricao']."</p>";
+    echo "<p>".$_POST['bairro']."</p>";
+    echo "<p>".$_POST['estado']."</p>";
+    echo "<p>".$_POST['pessoa']."</p>";
+    echo "<p>".$_POST['telefone']."</p>";
+    echo "<p>".$_POST['data']."</p>";
 
-echo  "<p>".$result."</p>";
+
+
+    foreach($bairros as $bairro) {
+      echo "<p>{$bairro['bai_nome']}</p>";
+    }
+    $pessoa = $_POST['pessoa'];
+    $bairro = $_POST['bairro'];
+    $contato = $_POST['telefone'];
+    $data = $_POST['data'];
+    $descricao = $_POST['descricao'];
+    $estado = $_POST['estado'];
+
+    $insert_query = "INSERT INTO tb_animais SET 
+    ani_desc = '$descricao', 
+    ani_est = '$estado',
+    ani_dat_enc = '$data',
+    ani_contato = '$contato',
+    ani_bai_codigo = '$bairro',
+    ani_pessoa = '$pessoa'
+    ";
+		$sql = $pdo->query($insert_query);
+
+
 
 ?>
 
-<!-- <table class="centered">
+<table class="centered">
         <thead>
           <tr>
-              <th>Semana</th>
-              <th>Animais Encontrados</th>
-              <th>Item Price</th>
+              <th>Descrição</th>
+              <th>Bairro</th>
+              <th>Estado</th>
+              <th>Pessoa</th>
+              <th>Telefone</th>
+              <th>Data</th>
+
+
+
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
+            <td><?php echo "<p>".$_POST['descricao']."</p>";?></td>
+            <td><?php echo "<p>".$_POST['bairro']."</p>";?></td>
+            <td><?php echo "<p>".$_POST['estado']."</p>";?></td>
+            <td><?php echo "<p>".$_POST['pessoa']."</p>";?></td>
+            <td><?php echo "<p>".$_POST['telefone']."</p>";?></td>
+            <td><?php echo "<p>".$_POST['data']."</p>";?></td>
           </tr>
           <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
         </tbody>
-      </table> -->
+      </table>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14127.823208800766!2d-37.09620968590643!3d-6.459890964979759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1609251199686!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" ></iframe>
 </div>
+
 </div>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
   </html>

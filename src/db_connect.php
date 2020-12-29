@@ -1,17 +1,12 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "usbw";
-    $dbname = "db_animais";
-    $port = 3306;
 
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-        $result = $conn -> query("select * from tb_animais");
-
-        if ($conn->connect_errno) {
-            echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
+        try {
+            $dns = "mysql:dbname=db_animais;host=localhost;port=3306;charset=utf8;";
+            $user = "root";
+            $pass = "usbw";
+            $pdo = new PDO($dns, $user, $pass);
+        } catch (PDOException $e) {
+            echo "Falha no Banco ". $e->getMessage();
         }
-        
-        echo $conn->host_info . "\n";
+
 ?>  
