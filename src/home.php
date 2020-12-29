@@ -18,11 +18,13 @@
 <nav>
     <div class="nav-wrapper  cyan darken-2">
       <a href="#!" class="brand-logo"><i class="material-icons">pets</i>AnimalCare</a>
+      
       <ul class="right hide-on-med-and-down">
+        
         <li><a href="home.php"><i class="material-icons">home</i></a></li>
         <li><a href="index.php"><i class="material-icons">edit</i></a></li>
-        <li><a href="dados.php"><i class="material-icons">search</i></a></li>
-        <li><a href="#"><i class="material-icons">map</i></a></li>
+        <li><a href="dados.php"><i class="material-icons">auto_graph</i></a></li>
+        <li><a href="map.php"><i class="material-icons">map</i></a></li>
       </ul>
     </div>
   </nav>
@@ -108,13 +110,13 @@
           <div class="card" >
             <div class="card-image">
               <img src="https://images4.alphacoders.com/277/277108.jpg"  height="200">
-              <span class="card-title">Mapa</span>
+              <span class="card-title">Buscar</span>
             </div>
             <div class="card-content">
-              <p>Veja nosso campo de busca em tempo real</p>
+              <p>Procure casos específicos de determinados animais</p>
             </div>
             <div class="card-action">
-              <a class="waves-effect waves-light btn  cyan darken-2">Veja os locais</a>
+              <a class="waves-effect waves-light btn  cyan darken-2" href="map.php">Procurar</a>
             </div>
           </div>
         </div>

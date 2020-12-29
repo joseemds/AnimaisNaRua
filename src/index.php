@@ -28,10 +28,10 @@
           <a href="index.php"><i class="material-icons">edit</i></a>
         </li>
         <li>
-          <a href="#"><i class="material-icons">search</i></a>
+          <a href="dados.php"><i class="material-icons">auto_graph</i></a>
         </li>
         <li>
-          <a href="#"><i class="material-icons">map</i></a>
+        <a href="map.php"><i class="material-icons">map</i></a>
         </li>
       </ul>
     </div>
@@ -42,15 +42,17 @@
         <form class="col s12 m7" method="post" action="dados.php" enctype="multipart/form-data">
           <div class="input-field col s12">
             <i class="material-icons prefix">edit</i>
-            <textarea id="textarea1" name="descricao" class="materialize-textarea"></textarea>
-            <label for="textarea1">Descrição do Animal </label>
+            <textarea id="textarea1" name="descricao" required pattern="[A-Za-zÀ-ú\s]+$" required minlength="2" class="materialize-textarea validate"></textarea>
+            <label for="textarea1" >Descrição do Animal </label>
+            <span class="helper-text" data-error="Digite a descrição!"></span>
+      
           </div>
           <div class="input-field col s12">
                     <i class="material-icons prefix">place</i>
     <select name="bairro">
       
 
-      <option value="" disabled selected>Escolha um bairro</option>
+      <option value="" disabled selected >Escolha um bairro</option>
 
       <?php
       include("db_connect.php");
@@ -72,7 +74,7 @@
             <i class="material-icons prefix">healing</i>
 
             <select name = "estado">
-              <option value="" disabled selected>
+              <option value="" disabled selected >
                 Selecione o estado do animal
               </option>
               <option value="bem" >Bem</option>
@@ -83,7 +85,8 @@
 
           <div class="input-field col s6">
             <i class="material-icons prefix">person_search</i>
-            <textarea id="icon_prefix3" class="materialize-textarea" name="pessoa"></textarea>
+            <textarea id="icon_prefix3" class="materialize-textarea validate" name="pessoa" required pattern="[a-zA-Z]*"  required minlength="2"></textarea>
+            <span class="helper-text" data-error="Digite um nome!"></span>
             <label for="icon_prefix3">Quem Achou</label>
           </div>
 
@@ -97,7 +100,7 @@
 
           <div class="input-field col s12">
             <i class="material-icons prefix">calendar_today</i>
-            <input type="text" class="datepicker" placeholder="Data" name="data" />
+            <input type="text" class="datepicker" placeholder="Data" name="data" required />
             <label for="icon_telephone">Em qual data o animal foi encontrado?</label>
           </div>
         <div class="input-field col s12">
@@ -130,7 +133,6 @@
       var instances = M.Datepicker.init(elems, {format: 'yyyy-mm-dd'});
     });
   </script>
-
 
 </body>
 
