@@ -17,14 +17,14 @@
 
 <nav>
     <div class="nav-wrapper  cyan darken-2">
-      <a href="#!" class="brand-logo"><i class="material-icons">pets</i>AnimalCare</a>
+      <a href="home.php" class="brand-logo"><i class="material-icons">pets</i>AnimalCare</a>
       
       <ul class="right hide-on-med-and-down">
         
         <li><a href="home.php"><i class="material-icons">home</i></a></li>
         <li><a href="index.php"><i class="material-icons">edit</i></a></li>
         <li><a href="dados.php"><i class="material-icons">auto_graph</i></a></li>
-        <li><a href="map.php"><i class="material-icons">map</i></a></li>
+        <li><a href="map.php"><i class="material-icons">search</i></a></li>
       </ul>
     </div>
   </nav>

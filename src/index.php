@@ -19,7 +19,7 @@
 <body>
   <nav>
     <div class="nav-wrapper cyan darken-2">
-      <a href="#!" class="brand-logo"><i class="material-icons">pets</i>AnimalCare</a>
+      <a href="home.php" class="brand-logo"><i class="material-icons">pets</i>AnimalCare</a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="home.php"><i class="material-icons">home</i></a>
@@ -31,7 +31,7 @@
           <a href="dados.php"><i class="material-icons">auto_graph</i></a>
         </li>
         <li>
-        <a href="map.php"><i class="material-icons">map</i></a>
+        <a href="map.php"><i class="material-icons">search</i></a>
         </li>
       </ul>
     </div>
@@ -42,7 +42,7 @@
         <form class="col s12 m7" method="post" action="dados.php" enctype="multipart/form-data">
           <div class="input-field col s12">
             <i class="material-icons prefix">edit</i>
-            <textarea id="textarea1" name="descricao" required pattern="[A-Za-zÀ-ú\s]+$" required minlength="2" class="materialize-textarea validate"></textarea>
+            <textarea id="textarea1" name="descricao" required pattern="[A-Za-zÀ-ú\s]+$" required minlength="2" maxlength="60" class="materialize-textarea validate"></textarea>
             <label for="textarea1" >Descrição do Animal </label>
             <span class="helper-text" data-error="Digite a descrição!"></span>
       
@@ -85,14 +85,14 @@
 
           <div class="input-field col s6">
             <i class="material-icons prefix">person_search</i>
-            <textarea id="icon_prefix3" class="materialize-textarea validate" name="pessoa" required pattern="[a-zA-Z]*"  required minlength="2"></textarea>
+            <textarea id="icon_prefix3" class="materialize-textarea validate" name="pessoa" required pattern="[a-zA-Z]*"  required minlength="2" maxlength="20" ></textarea>
             <span class="helper-text" data-error="Digite um nome!"></span>
             <label for="icon_prefix3">Quem Achou</label>
           </div>
 
           <div class="input-field col s6">
             <i class="material-icons prefix">phone</i>
-            <input id="icon_telephone" type="tel" required pattern="[0-9]+$" name="telefone" class="validate" />
+            <input id="icon_telephone" type="tel" required pattern="[0-9]+$" name="telefone" maxlength="12" class="validate" />
             <span class="helper-text" data-error="Digite um número!"></span>
 
             <label for="icon_telephone">Telefone</label>
